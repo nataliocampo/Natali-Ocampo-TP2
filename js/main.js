@@ -1,7 +1,7 @@
 import { obtenerPokemon, obtenerlistaPokemones } from "./services/pokemonServices.js";
 import { renderPokemonCard, renderTodos } from "./components/pokemonCard.js";
 
-const inputPokemon = document.querySelector("#pokemon");
+const inputPokemon = document.querySelector("#inputPokemon");
 
 const botonBuscar = document.querySelector("#btnBuscar");
 
@@ -23,26 +23,20 @@ const cargarPokemones = async () => {
 
 //buscar pokemon
 const buscarPokemon = async () => {
-  const id = inputPokemon.value;
+  const busqueda = inputPokemon.value.toLowerCase();
 
   contenedorResultado.innerHTML = "";
 
-  if (!id) {
+  if (!busqueda) {
     mostrarMensaje("agregar alertas1!.");
 
     return;
   }
+  const pokemon = await obtenerPokemon(busqueda);
 
+  contenedorResultado.innerHTML = renderPokemonCard(pokemon);
 
 }
 
-
-//  const init = async () => {
-//    const res = await obtenerPokemon();
-  
-//    const pokemon = await obtenerPokemon(res);
-
-// };
-
-
 cargarPokemones(); 
+botonBuscar.addEventListener("click", buscarPokemon);
