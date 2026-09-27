@@ -6,6 +6,8 @@ const inputPokemon = document.querySelector("#inputPokemon");
 const botonBuscar = document.querySelector("#btnBuscar");
 
 const contenedorResultado = document.querySelector("#resultado");
+const botonVolver = document.querySelector("#btnVolver");
+
 
 //cargarpokemones inicio
 const cargarPokemones = async () => {
@@ -38,5 +40,9 @@ const buscarPokemon = async () => {
 
 }
 
-cargarPokemones(); 
+
 botonBuscar.addEventListener("click", buscarPokemon);
+
+botonVolver.addEventListener("click", cargarPokemones);
+
+cargarPokemones(); 
