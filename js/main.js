@@ -11,7 +11,8 @@ const contenedorResultado = document.querySelector("#resultado");
 const cargarPokemones = async () => {
  
   const lista = await  obtenerlistaPokemones();
-  const detalle = await Promise.all(lista.map(p=> obtenerPokemon(p.nombre)));
+  
+  const detalle = await Promise.all(lista.map(p=> obtenerPokemon(p.name)));
   
 
   contenedorResultado.innerHTML=renderTodos(detalle);
@@ -36,11 +37,12 @@ const buscarPokemon = async () => {
 }
 
 
-// const init = async () => {
-//   const res = await obtenerPokemon();
+//  const init = async () => {
+//    const res = await obtenerPokemon();
   
 //    const pokemon = await obtenerPokemon(res);
 
 // };
 
-window.addEventListener('DOMContentLoaded', cargarPokemones);
+
+cargarPokemones(); 
