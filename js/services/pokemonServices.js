@@ -14,7 +14,7 @@ export const obtenerPokemon = async (pokeBuscado) => {
 
 export const obtenerlistaPokemones = async () => {
  
-  const resp = await fetch(`${API_URL}?limit=20`);
+  const resp = await fetch(`${API_URL}?limit=25`);
   const datos = await resp.json();
 
   return datos.results;
