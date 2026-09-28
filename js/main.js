@@ -1,6 +1,6 @@
 import { obtenerPokemon, obtenerlistaPokemones } from "./services/pokemonServices.js";
 import { renderPokemonCard, renderTodos } from "./components/pokemonCard.js";
-import { mostrarAlerta,limpiarInput} from './helpers/sweetAlert.js';
+import { mostrarAlerta,limpiarInput,alertaInputVacio} from './helpers/sweetAlert.js';
 
 
 const inputPokemon = document.querySelector("#inputPokemon");
@@ -29,22 +29,25 @@ const cargarPokemones = async () => {
 
 //buscar pokemon
 const buscarPokemon = async () => {
-  const busqueda = inputPokemon.value.toLowerCase();
-  limpiarInput();
+  const busqueda = inputPokemon.value.toLowerCase().trim();
+  if (!busqueda){
+    alertaInputVacio();
+    limpiarInput();
+
+    return;
+  }
+
   try {
      const pokemon = await obtenerPokemon(busqueda);
 
    contenedorResultado.innerHTML = renderPokemonCard(pokemon);
-    
-  
+     limpiarInput();
+
 
   } catch (error) {
    mostrarAlerta();
   
   }
-
- 
- 
 
 }
 

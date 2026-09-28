@@ -9,3 +9,10 @@ export const mostrarAlerta = () => {
 export const limpiarInput = () => {
   document.querySelector("#inputPokemon").value = " ";
 };
+
+
+
+
+export const alertaInputVacio = () => {
+  Swal.fire({template:"#templateInputVacio"});
+};
