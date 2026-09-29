@@ -1,6 +1,5 @@
 const contenidoPokemonCard= (pokemon)=> 
 `
-        
              <div class="card h-100">
                     <img src="${pokemon.sprites.front_default}" class="card-img-top" alt="${pokemon.name}">
                             
@@ -25,14 +24,14 @@ const contenidoPokemonCard= (pokemon)=>
                         </div>
                  </div>
             </div>
-         `        
+         `       
 ;
 export const renderPokemonCard = (pokemon) => {
-    return  ` <div class="col-md 4 mx-auto">   ${cardContenido(pokemon) } </div>  `
+    return  `<div class="col-md-3 mx-auto">   ${contenidoPokemonCard(pokemon) } </div>`
 };
 
 
 export const renderTodos = (listaPokemones) => {
-  return listaPokemones.map(pokemon => renderPokemonCard(pokemon)).join("");
+  return listaPokemones.map(pokemon => `<div class="col">${contenidoPokemonCard(pokemon)}</div>`).join("");
 };
 
