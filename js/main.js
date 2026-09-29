@@ -21,7 +21,7 @@ const cargarPokemones = async () => {
   alertaCargarTodos();
  
  }
-   finally {
+  finally {
     ocultarSpinner();
    }
   
@@ -39,7 +39,7 @@ const buscarPokemon = async () => {
   contenedorResultado.innerHTML = "";
   try {
     await new Promise((resolve) => {
-      setTimeout(resolve, 1000);
+      setTimeout(resolve, 800);
       });
      const pokemon = await obtenerPokemon(busqueda);
 
@@ -63,6 +63,7 @@ const reinicialPantalla = async ()=> {
 
  limpiarInput();
   contenedorResultado.innerHTML = "";
+
  await cargarPokemones(); 
 }
 
