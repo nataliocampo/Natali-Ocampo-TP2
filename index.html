@@ -56,13 +56,19 @@
 
         <section class="pt-5 pb-3 mt-3 text-center">
             <div class="container" >
-                <div class="row row-cols-1 row-cols-md-5 g-4" id= "resultado"></div>
-            </div>
+                   <div id="spinner" class="text-center my-5 d-none">
+                         <div  class="spinner-border text-primary"  role="status">
+                                <span class="visually-hidden">
+                                    Cargando...
+                                </span>
+                        </div>
 
+                     </div>
 
+             <div class="row row-cols-1 row-cols-md-5 g-4" id="resultado"></div>
+           
 
         </section>
-
 
     </main>
     
@@ -89,7 +95,7 @@
      <!-- alertas -->
      <template id="templateErrorPokemon">
         <swal-title>
-            Pokémon no encontrado
+            Pokemon no encontrado
         </swal-title>
         <swal-icon type="warning" color="red"></swal-icon>
         <swal-button type="confirm" color="red">

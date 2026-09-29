@@ -7,7 +7,7 @@ export const mostrarAlerta = () => {
 };
 
 export const limpiarInput = () => {
-  document.querySelector("#inputPokemon").value = " ";
+  document.querySelector("#inputPokemon").value = "";
 };
 
 
@@ -15,4 +15,12 @@ export const limpiarInput = () => {
 
 export const alertaInputVacio = () => {
   Swal.fire({template:"#templateInputVacio"});
+};
+
+export const mostrarSpinner = () => {
+  document.querySelector("#spinner").classList.remove("d-none");
+};
+
+export const ocultarSpinner = () => {
+  document.querySelector("#spinner").classList.add("d-none");
 };
