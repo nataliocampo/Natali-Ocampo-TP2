@@ -10,7 +10,11 @@ export const limpiarInput = () => {
   document.querySelector("#inputPokemon").value = "";
 };
 
+export const alertaCargarTodos = () => {
+  
+    Swal.fire({template:"#templateErrorCargartodos"});
 
+};
 
 
 export const alertaInputVacio = () => {
