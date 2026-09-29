@@ -1,23 +1,23 @@
 export const renderPokemonCard = (pokemon) => {
     return `
-         <div class="col">
+         <div class="col-md 4 mx-auto">
              <div class="card h-100">
                     <img src="${pokemon.sprites.front_default}" class="card-img-top" alt="${pokemon.name}">
                             
                         <div class="card-body">
                             <h3 class="card-title">${pokemon.name}</h3>
 
-                            <p class="card-text">
+                            <p class="card-text mb-1">
                                <strong>N°:</strong>
                                 ${pokemon.id}
                             </p>
 
-                            <p class="card-text">
+                            <p class="card-text mb-1">
                                 <strong>Altura:</strong>
                                 ${pokemon.height}
                             </p>
 
-                            <p class="card-text">
+                            <p class="card-text mb-0">
                                 <strong>Peso:</strong>
                                 ${pokemon.weight}
                            </p>
@@ -30,33 +30,6 @@ export const renderPokemonCard = (pokemon) => {
 
 
 export const renderTodos = (listaPokemones) => {
-  return listaPokemones.map(pokemon => `
-       <div class="card h-100">
-                    <img src="${pokemon.sprites.front_default}" class="card-img-top" alt="${pokemon.name}">
-                            
-                        <div class="card-body">
-                            <tr>
-                            <td>${pokemon.name}</td>
-
-                                <p class="card-text">
-                                <strong>N°:</strong>
-                                ${pokemon.id}
-                                </p>
-
-                                <p class="card-text">
-                                <strong>Altura:</strong>
-                                ${pokemon.height}
-                                </p>
-
-                                <p class="card-text">
-                                <strong>Peso:</strong>
-                                ${pokemon.weight}
-                            
-                            </tr>
-                         </div>
-            </div>
-    ` 
-
-  ).join("");
+  return listaPokemones.map(pokemon => renderPokemonCard(pokemon)).join("");
 };
 
