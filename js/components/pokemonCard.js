@@ -1,6 +1,6 @@
-export const renderPokemonCard = (pokemon) => {
-    return `
-         <div class="col-md 4 mx-auto">
+const contenidoPokemonCard= (pokemon)=> 
+`
+        
              <div class="card h-100">
                     <img src="${pokemon.sprites.front_default}" class="card-img-top" alt="${pokemon.name}">
                             
@@ -26,6 +26,9 @@ export const renderPokemonCard = (pokemon) => {
                  </div>
             </div>
          `        
+;
+export const renderPokemonCard = (pokemon) => {
+    return  ` <div class="col-md 4 mx-auto">   ${cardContenido(pokemon) } </div>  `
 };
 
 
