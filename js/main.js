@@ -17,6 +17,7 @@ const botonVolver = document.querySelector("#btnVolver");
 const cargarPokemones = async () => {
  
   const lista = await  obtenerlistaPokemones();
+ 
   
   const detalle = await Promise.all(lista.map(p=> obtenerPokemon(p.name)));
   
@@ -64,9 +65,18 @@ const buscarPokemon = async () => {
    }
 };
 
-cargarPokemones(); 
+ cargarPokemones();
+
+const reinicialPantalla = async ()=> {
+
+ limpiarInput();
+ await cargarPokemones(); 
+
+ 
+
+}
 
 botonBuscar.addEventListener("click", buscarPokemon);
 
-botonVolver.addEventListener("click", cargarPokemones);
+botonVolver.addEventListener("click", reinicialPantalla);
 
