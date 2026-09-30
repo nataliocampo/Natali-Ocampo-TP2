@@ -27,7 +27,7 @@ const contenidoPokemonCard= (pokemon)=>
          `       
 ;
 export const renderPokemonCard = (pokemon) => {
-    return  `<div class="col-md-3 mx-auto">   ${contenidoPokemonCard(pokemon) } </div>`
+    return  `<div class="col-8 col-md-3 mx-auto"">   ${contenidoPokemonCard(pokemon) } </div>`
 };
 
 
